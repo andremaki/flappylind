@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import pygame
 import random
 
@@ -19,7 +18,7 @@ lind_velocity = 0
 
 # Pipe properties
 pipe_width = 70
-pipe_height = random.randint(150, 450)
+pipe_height = random.randint(150, 550)
 pipe_color = (0, 255, 0)
 pipe_x = 400
 space_between_pipes = 200
@@ -54,7 +53,7 @@ while running:
     pipe_x -= 2
     if pipe_x < -pipe_width:
         pipe_x = SCREEN_WIDTH
-        pipe_height = random.randint(150, 450)
+        pipe_height = random.randint(150, 550)
         score += 1
 
     # Draw bird
@@ -81,5 +80,3 @@ while running:
     clock.tick(30)
 
 pygame.quit()
-=======
->>>>>>> Stashed changes
