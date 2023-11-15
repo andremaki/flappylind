@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import pygame
 import random
 
@@ -8,6 +7,7 @@ pygame.init()
 # Screen dimensions
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 800
+
 
 # Bird properties
 lind_x = 50
@@ -51,7 +51,7 @@ while running:
     lind_y += lind_velocity
 
     # Pipe movement
-    pipe_x -= 2
+    pipe_x -= 8
     if pipe_x < -pipe_width:
         pipe_x = SCREEN_WIDTH
         pipe_height = random.randint(150, 450)
@@ -81,5 +81,3 @@ while running:
     clock.tick(30)
 
 pygame.quit()
-=======
->>>>>>> Stashed changes
