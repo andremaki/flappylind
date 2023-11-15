@@ -9,12 +9,12 @@ SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 800
 
 # Bird properties
-bird_x = 50
-bird_y = 300
-bird_width = 40
-bird_height = 40
+lind_x = 50
+lind_y = 300
+lind_width = 40
+lind_height = 40
 gravity = 0.5
-bird_velocity = 0
+lind_velocity = 0
 
 # Pipe properties
 pipe_width = 70
@@ -43,11 +43,11 @@ while running:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                bird_velocity = -5
+                lind_velocity = -10
 
     # Bird movement
-    bird_velocity += gravity
-    bird_y += bird_velocity
+    lind_velocity += gravity
+    lind_y += lind_velocity
 
     # Pipe movement
     pipe_x -= 2
@@ -57,18 +57,18 @@ while running:
         score += 1
 
     # Draw bird
-    pygame.draw.rect(screen, (255, 255, 0), (bird_x, bird_y, bird_width, bird_height))
+    pygame.draw.rect(screen, (255, 255, 0), (lind_x, lind_y, lind_width, lind_height))
 
     # Draw pipes
     pygame.draw.rect(screen, pipe_color, (pipe_x, 0, pipe_width, pipe_height))
     pygame.draw.rect(screen, pipe_color, (pipe_x, pipe_height + space_between_pipes, pipe_width, SCREEN_HEIGHT))
 
     # Collision detection
-    if bird_y > SCREEN_HEIGHT - bird_height or bird_y < 0:
+    if lind_y > SCREEN_HEIGHT - lind_height or lind_y < 0:
         running = False
 
-    if pipe_x < bird_x + bird_width and bird_x < pipe_x + pipe_width:
-        if bird_y < pipe_height or bird_y > pipe_height + space_between_pipes:
+    if pipe_x < lind_x + lind_width and lind_x < pipe_x + pipe_width:
+        if lind_y < pipe_height or lind_y > pipe_height + space_between_pipes:
             running = False
 
     # Display score
