@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import pygame
 import random
 
@@ -80,3 +81,5 @@ while running:
     clock.tick(30)
 
 pygame.quit()
+=======
+>>>>>>> Stashed changes
