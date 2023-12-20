@@ -10,7 +10,7 @@ lind_x = 50
 lind_y = 300
 lind_width = 40
 lind_height = 40
-gravity = 0.5
+gravity = 0.8
 lind_velocity = 0
 
 pipe_width = 70
@@ -53,8 +53,10 @@ while running:
     lind_velocity += gravity
     lind_y += lind_velocity
 
+
+
     for pipe in pipes:
-        pipe.x -= 4
+        pipe.x -= 8
 
     if pipes[0].x < -pipe_width:
         pipes.pop(0)
@@ -81,9 +83,10 @@ while running:
 
     pygame.draw.rect(screen, (255, 255, 0), (lind_x, lind_y, lind_width, lind_height))
 
-    font = pygame.font.SysFont(None, 36)
-    text = font.render(f"Score: {score}", True, (255, 255, 255))
-    screen.blit(text, (10, 10))
+    font = pygame.font.SysFont(None, 100)
+    text = font.render(f"{score}", True, (255, 255, 255))
+    text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, 80))
+    screen.blit(text, text_rect)
 
     pygame.display.update()
     clock.tick(30)
