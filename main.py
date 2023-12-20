@@ -9,13 +9,11 @@ SCREEN_HEIGHT = 800
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Flappy Lind")
 
-# Now load and convert images
-background_image = pygame.image.load('pildid/cityreflection1.png').convert()  # Update with your image path
+background_image = pygame.image.load('pildid/cityreflection1.png').convert()
 background_width = background_image.get_width()
 background_x1 = 0
 background_x2 = background_width
 
-# Load and set up the bird (lind) image
 lind_image = pygame.image.load('pildid/lennuk.png')
 lind_width = 100
 lind_height = 100
@@ -29,7 +27,6 @@ lind_mask = pygame.mask.from_surface(lind_image)
 lind_velocity = 0
 gravity = 0.7
 
-# Load and set up the pipe image
 pipe_image = pygame.image.load('pildid/image-removebg-preview.png')
 pipe_width = 140
 space_between_pipes = 200
@@ -71,7 +68,6 @@ for i in range(initial_pipe_count):
     pipes.append(new_pipe)
 
 while running:
-    # Scroll the background
     background_x1 -= 2
     background_x2 -= 2
     if background_x1 <= -background_width:
@@ -79,7 +75,6 @@ while running:
     if background_x2 <= -background_width:
         background_x2 = background_width
 
-    # Draw the background
     screen.blit(background_image, (background_x1, 0))
     screen.blit(background_image, (background_x2, 0))
 
